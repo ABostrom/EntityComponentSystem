@@ -2,6 +2,9 @@
 
 #include <vector>
 #include <memory>
+
+#include "ArchetypeManager.h"
+#include "Archetype.h"
 #include "Entity.h"
 
 
@@ -26,7 +29,7 @@ class EntityManager
 public:
 
 	EntityManager() = default;
-	EntityHandle CreateEntity();
+	EntityHandle CreateEntity(const ArchetypeHandle& handle);
 	std::shared_ptr<Entity> GetEntity(const EntityHandle& handle);
 
 private:

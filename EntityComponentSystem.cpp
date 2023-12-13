@@ -5,7 +5,9 @@
 
 #include "Entity.h"
 #include "EntityManager.h"
+#include "ExecutionContext.h"
 #include "Fragment.h"
+#include "Processor.h"
 
 using namespace std;
 
@@ -44,21 +46,38 @@ TODO:
 int main()
 {
 	//create entities.
+	ArchetypeManager ArchetypeManager;
+	const ArchetypeHandle bool_int_float_handle = ArchetypeManager.CreateArchetype<TestFragment_Bool, TestFragment_Int, TestFragment_Float>();
+	const ArchetypeHandle int_float_handle = ArchetypeManager.CreateArchetype<TestFragment_Int, TestFragment_Float>();
+
 	EntityManager EntityManager;
 	std::vector<EntityHandle> handles;
 
 	//create a bunch of entities.
 	//TODO: build an entity from a set of fragments.
-	handles.push_back(EntityManager.CreateEntity());
-	handles.push_back(EntityManager.CreateEntity());
-	handles.push_back(EntityManager.CreateEntity());
-	handles.push_back(EntityManager.CreateEntity());
+	handles.push_back(EntityManager.CreateEntity(bool_int_float_handle));
+	handles.push_back(EntityManager.CreateEntity(bool_int_float_handle));
+	handles.push_back(EntityManager.CreateEntity(int_float_handle));
+	handles.push_back(EntityManager.CreateEntity(int_float_handle));
 
 	//find entities from the manager.
 	for (const EntityHandle& handle : handles)
 	{
 		const std::shared_ptr<Entity> found = EntityManager.GetEntity(handle);
 		cout << "Entity:" << found << endl;
+	}
+
+	const std::vector<unique_ptr<Processor>> Processors = { make_unique<TestProcesser_BoolIntFloat>(), make_unique<TestProcesser_BoolIntFloat>() };
+	for (const unique_ptr<Processor>& processor : Processors)
+	{
+		processor->ConfigureQueries();
+	}
+
+	//TODO: Loop here like a game loop.
+	ExecutionContext context;
+	for (const unique_ptr<Processor>& processor : Processors)
+	{
+		processor->Execute(EntityManager, context);
 	}
 
 	return 0;

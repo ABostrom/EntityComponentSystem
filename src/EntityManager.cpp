@@ -1,7 +1,10 @@
 #include "EntityManager.h"
 
-EntityHandle EntityManager::CreateEntity()
+EntityHandle EntityManager::CreateEntity(const ArchetypeHandle& handle)
 {
+	//TODO: use the handle to create the Entity.
+
+
 	Entities.push_back(std::make_shared<Entity>());
 	return {static_cast<int>(Entities.size()) - 1};
 }

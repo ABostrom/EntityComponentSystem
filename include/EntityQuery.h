@@ -16,8 +16,13 @@ class EntityQuery
 {
 public:
 
-	template<typename T>
-	void AddRequirement();
+	template <typename T>
+	void AddRequirement()
+	{
+		Requirements.insert(std::type_index(typeid(T)));
+	}
+
+
 	void ForAllEntity(const EntityManager& EntityManager, const ExecutionContext& Context, const std::function<void(const ExecutionContext&)>& Func);
 	void RegisterWithProcessor(const Processor& Processor);
 

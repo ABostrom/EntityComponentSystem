@@ -5,11 +5,7 @@
 #include "ExecutionContext.h"
 #include <typeinfo>
 
-template <typename T>
-void EntityQuery::AddRequirement()
-{
-	Requirements.insert(std::type_index(typeid(T)));
-}
+
 
 
 void EntityQuery::RegisterWithProcessor(const Processor& Processor)
