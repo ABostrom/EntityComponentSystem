@@ -1,3 +1,0 @@
-C:/Users/Aaron/source/repos/EntityComponentSystem/out/build/x64-debug/CMakeFiles/EntityComponentsystemBuild.dir
-C:/Users/Aaron/source/repos/EntityComponentSystem/out/build/x64-debug/CMakeFiles/edit_cache.dir
-C:/Users/Aaron/source/repos/EntityComponentSystem/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
