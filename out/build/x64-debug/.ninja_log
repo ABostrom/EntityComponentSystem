@@ -1,0 +1,10 @@
+# ninja log v5
+3	498	7240852235969796	CMakeFiles/EntityComponentSystem.dir/EntityComponentSystem.cpp.obj	7eab9a2efe6a58
+9	888	7241236883803543	CMakeFiles/EntityComponentsystemBuild.dir/EntityComponentSystem.cpp.obj	a2290638cbf5fb71
+499	670	7240852237552826	EntityComponentSystem.exe	4076ac8a7c338676
+9	43	7241237770644591	CMakeFiles/EntityComponentsystemBuild.dir/src/Entity.cpp.obj	10c54b3331cd9d5f
+21	334	7241236878258527	CMakeFiles/EntityComponentsystemBuild.dir/src/Fragment.cpp.obj	e42f1946041d6f95
+44	172	7241237771557562	EntityComponentsystemBuild.exe	24fef62ccaa2ffe0
+11	293	7241237643660803	CMakeFiles/EntityComponentsystemBuild.dir/src/EntityManager.cpp.obj	fb2dce598a09c8ae
+24	658	7241236881499751	CMakeFiles/EntityComponentsystemBuild.dir/src/Processor.cpp.obj	a236315c44994e9f
+18	652	7241236881429940	CMakeFiles/EntityComponentsystemBuild.dir/src/EntityQuery.cpp.obj	1e5eb36b3ebadab
